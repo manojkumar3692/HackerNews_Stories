@@ -26,8 +26,11 @@ function Comments(props) {
     <div className="home">
     <h1> Top Comments</h1>
     <div className="home__container">
+     {
+       comments.length === 0 && <div>Loading. ....</div>
+     } 
     {
-    comments.map(story => (
+    comments.length !==0  && comments.map(story => (
         <div key={story.id} className="home__box">  
           <h1>{story.text}</h1>
         </div>
